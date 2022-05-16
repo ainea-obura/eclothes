@@ -8,8 +8,15 @@
       <form method="post" action="{{route('users.store')}}">
         {{csrf_field()}}
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Name</label>
-        <input id="inputTitle" type="text" name="name" placeholder="Enter name"  value="{{old('name')}}" class="form-control">
+          <label for="inputTitle" class="col-form-label">fname</label>
+        <input id="inputTitle" type="text" name="fname" placeholder="First name"  value="{{old('fname')}}" class="form-control">
+        @error('name')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+        </div>
+        
+        <label for="inputTitle" class="col-form-label">lname</label>
+        <input id="inputTitle" type="text" name="lname" placeholder="Last name"  value="{{old('lname')}}" class="form-control">
         @error('name')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -21,6 +28,13 @@
           @error('email')
           <span class="text-danger">{{$message}}</span>
           @enderror
+        </div>
+
+        <label for="inputTitle" class="col-form-label">phone</label>
+        <input id="inputTitle" type="text" name="phone" placeholder="Phone number"  value="{{old('phone')}}" class="form-control">
+        @error('name')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
         </div>
 
         <div class="form-group">

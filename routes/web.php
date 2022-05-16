@@ -49,6 +49,8 @@ Route::get('/cart',function(){
     return view('frontend.pages.cart');
 })->name('cart');
 Route::get('/checkout','CartController@checkout')->name('checkout')->middleware('user');
+//Route::get('/address','CartController@address')->name('address')->middleware('user');
+
 // Wishlist
 Route::get('/wishlist',function(){
     return view('frontend.pages.wishlist');
@@ -86,9 +88,14 @@ Route::resource('/comment','PostCommentController');
 // Coupon
 Route::post('/coupon-store','CouponController@couponStore')->name('coupon-store');
 // Payment
-Route::get('payment', 'PayPalController@payment')->name('payment');
-Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
-Route::get('payment/success', 'PayPalController@success')->name('payment.success');
+//Route::get('payment', 'MpesaController@payment')->name('payment');
+//Route::get('cancel', 'MpesaController@cancel')->name('payment.cancel');
+//Route::get('payment/success', 'MpesaController@success')->name('payment.success');
+
+//Route::post('/api/v1/access/token', [MpesaController::class, 'generateAccessToken'])->name('payment');
+//Route::post('v1/access/token', 'MpesaController@generateAccessToken');
+
+
 
 
 

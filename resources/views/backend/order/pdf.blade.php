@@ -77,7 +77,6 @@
       <h4>{{env('APP_NAME')}}</h4>
       <p>{{env('APP_ADDRESS')}}</p>
       <p>Phone: <a href="tel:{{env('APP_PHONE')}}">{{env('APP_PHONE')}}</a></p>
-      <p>Email: <a href="mailto:{{env('APP_EMAIL')}}">{{env('APP_EMAIL')}}</a></p>
     </div>
     <div class="clearfix"></div>
   </div>
@@ -86,16 +85,12 @@
       <h6>Invoice to</h6>
        <h3>{{$order->first_name}} {{$order->last_name}}</h3>
        <div class="address">
-        <p>
-          <strong>Country: </strong>
-          {{$order->country}}
-        </p>
+       
         <p>
           <strong>Address: </strong>
-          {{ $order->address1 }} OR {{ $order->address2}}
+          {{ $order->location }} OR {{ $order->address}}
         </p>
          <p><strong>Phone:</strong> {{ $order->phone }}</p>
-         <p><strong>Email:</strong> {{ $order->email }}</p>
        </div>
     </div>
     <div class="invoice-right-top float-right" class="text-right">
@@ -152,14 +147,14 @@
             $shipping_charge=DB::table('shippings')->where('id',$order->shipping_id)->pluck('price');
           @endphp
           <th scope="col" class="text-right ">Shipping:</th>
-          <th><span>${{number_format($shipping_charge[0],2)}}</span></th>
+          <th><span>KSh{{number_format($shipping_charge[0]??2)}}</span></th>
         </tr>
         <tr>
           <th scope="col" class="empty"></th>
           <th scope="col" class="text-right">Total:</th>
           <th>
             <span>
-                ${{number_format($order->total_amount,2)}}
+                KSh{{number_format($order->total_amount,2)}}
             </span>
           </th>
         </tr>

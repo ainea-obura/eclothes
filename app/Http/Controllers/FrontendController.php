@@ -375,8 +375,10 @@ class FrontendController extends Controller
     public function registerSubmit(Request $request){
         // return $request->all();
         $this->validate($request,[
-            'name'=>'string|required|min:2',
+            'fname'=>'string|required|min:2',
+            'lname'=>'string|required|min:2',
             'email'=>'string|required|unique:users,email',
+            'phone'=>'string|required|min:8',
             'password'=>'required|min:6|confirmed',
         ]);
         $data=$request->all();
@@ -394,8 +396,10 @@ class FrontendController extends Controller
     }
     public function create(array $data){
         return User::create([
-            'name'=>$data['name'],
+            'fname'=>$data['fname'],
+            'lname'=>$data['lname'],
             'email'=>$data['email'],
+            'phone'=>$data['phone'],
             'password'=>Hash::make($data['password']),
             'status'=>'active'
             ]);
