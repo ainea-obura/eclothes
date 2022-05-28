@@ -40,9 +40,9 @@ class MpesaController extends Controller
             'Timestamp' => Carbon::rawParse('now')->format('YmdHms'),
             'TransactionType' => 'CustomerPayBillOnline',
             'Amount' => 1,
-            'PartyA' => 254716347332, // replace this with your phone number
+            'PartyA' => 254716347332, 
             'PartyB' => 174379,
-            'PhoneNumber' => 254716347332, // replace this with your phone number
+            'PhoneNumber' => 254716347332,
             'CallBackURL' => 'https://sandbox.safaricom.co.ke/mpesa/',
             'AccountReference' => "Eclothes",
             'TransactionDesc' => "Eclothes stk push"
