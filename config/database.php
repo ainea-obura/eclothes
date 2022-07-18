@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL=parse_url("DATABASE_URL");
-
 return [
 
     /*
@@ -76,7 +74,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'schema' => 'public',
+            'search_path' => 'public',
             'sslmode' => 'prefer',
         ],
 
