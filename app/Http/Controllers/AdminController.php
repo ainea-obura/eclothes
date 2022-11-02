@@ -24,6 +24,7 @@ class AdminController extends Controller
      }
     //  return $data;
      return view('backend.index')->with('users', json_encode($array));
+     return view('backend.index');
     }
 
     public function profile(){
