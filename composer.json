@@ -19,7 +19,8 @@
         "pusher/pusher-php-server": "^7.0.2",
         "spatie/laravel-newsletter": "^4.11.0",
         "srmklive/paypal": "~3.0.13",
-        "unisharp/laravel-filemanager": "^2.4.1"
+        "unisharp/laravel-filemanager": "^2.4.1",
+        "ext-imagick": "*"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",
