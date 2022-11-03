@@ -20,6 +20,8 @@
         "spatie/laravel-newsletter": "^4.11.0",
         "srmklive/paypal": "~3.0.13",
         "unisharp/laravel-filemanager": "^2.4.1",
+    },
+    "provide": {
         "ext-imagick": "*"
     },
     "require-dev": {
