@@ -20,8 +20,7 @@
         "pusher/pusher-php-server": "^7.0.2",
         "spatie/laravel-newsletter": "^4.11.0",
         "srmklive/paypal": "~3.0.13",
-        "unisharp/laravel-filemanager": "^2.4.1",
-        "ext-gd": "*"
+        "unisharp/laravel-filemanager": "^2.4.1"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",
@@ -33,7 +32,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "platform":{
+            "ext-imagick": "0.1.2"
+            }
     },
     "extra": {
         "laravel": {
